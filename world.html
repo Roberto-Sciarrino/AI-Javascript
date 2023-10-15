@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animazione GIF</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="myCanvas" width="1000" height="500"></canvas>
+  <div id="controls">
+    <button onclick="startAnimation()">Start Animation</button>
+    <button onclick="stopAnimation()">Stop Animation</button>
+  </div>
+  <script src="world.js"></script>
+  <script>
+    var animationInterval;
+
+    function startAnimation() {
+      animationInterval = setInterval(function () {
+        world.turn();
+        graph.draw();
+      }, 200); // Modifica il valore del timeout a tuo piacimento per regolare la velocità dell'animazione
+    }
+
+    function stopAnimation() {
+      clearInterval(animationInterval);
+    }
+  </script>
+</body>
+</html>
+
+ 
